@@ -23,7 +23,6 @@ resolvers ++= Seq(
 scalacOptions in Test ++= Seq("-Yrangepos")
 
 resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo,
-// other resolvers here
   "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
 )
 
