@@ -10,11 +10,21 @@ libraryDependencies ++= Seq(
   "org.specs2" %% "specs2" % "2.3.7" % "test"
 )
 
+// Numeric and visualization libraries
+libraryDependencies  ++= Seq (
+  "org.scalanlp" % "breeze_2.10" % "0.8.1",
+  "org.scalanlp" % "nak" % "1.2.1",
+  "org.jfree" % "jfreechart" % "1.0.14"
+)
+
+resolvers ++= Seq(
+  )
+
 scalacOptions in Test ++= Seq("-Yrangepos")
 
-// Read here for optional dependencies:
-// http://etorreborre.github.io/specs2/guide/org.specs2.guide.Runners.html#Dependencies
-
-resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo)
+resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo,
+// other resolvers here
+  "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
+)
 
 initialCommands := "import $organization$.$name;format="lower,word"$._"
