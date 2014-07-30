@@ -4,7 +4,7 @@ import breeze.linalg._
 
 object HelloWorld {
   def main(args: Array[String]) {
-	println("Vector: " + DenseVector.zeros[Double](10)
+	println("Vector: " + DenseVector.zeros[Double](10))
   }
 }
 

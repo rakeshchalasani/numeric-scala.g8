@@ -18,12 +18,11 @@ libraryDependencies  ++= Seq (
 )
 
 resolvers ++= Seq(
-  )
+	"Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
+)
 
 scalacOptions in Test ++= Seq("-Yrangepos")
 
-resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo,
-  "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
-)
+resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo)
 
 initialCommands := "import $organization$.$name;format="lower,word"$._"
